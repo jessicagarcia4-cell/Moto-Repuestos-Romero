@@ -1,0 +1,67 @@
+/* Small animation helpers used in the app classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn .18s ease-out both;
+}
+
+/* Basic resets and helpful small rules to keep layout consistent */
+:root {
+  --bg-slate-50: #f8fafc;
+  --red-600: #dc2626;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+}
+
+/* Ensure images inside placeholders don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility: visually-hidden for accessibility where used */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Keep scroll behavior smooth for in-app navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Touch friendly tweaks */
+button, input, select, textarea {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Small tweak for code / JSON outputs */
+textarea[readonly] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  resize: none;
+}
